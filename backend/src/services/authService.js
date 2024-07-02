@@ -13,10 +13,10 @@ export const loginService = async (email, password) => {
   return token;
 };
 
-export const registerService = async (name, email, password) => {
+export const registerService = async (name, email, password, role) => {
   const hashedPassword = await bcrypt.hash(password, 10);
   const user = await prisma.user.create({
-    data: { name, email, password: hashedPassword }
+    data: { name, email, password: hashedPassword, role }
   });
   return user;
 };
