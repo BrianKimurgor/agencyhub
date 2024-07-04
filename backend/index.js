@@ -1,7 +1,8 @@
 // index.js
-import server from './src/server.js'
-const PORT = process.env.PORT || 3000;
+// import server from './src/server.js'
+import app from './src/app.js';
+const PORT = process.env.PORT || 5000;
 
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
