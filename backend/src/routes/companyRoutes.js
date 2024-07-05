@@ -1,7 +1,7 @@
 // backend/src/routes/companyRoutes.js
 
 import express from 'express'
-import authMiddleware from '../middlewares/authMiddleware.js';
+import { authorize } from '../middlewares/roleMiddleware.js';
 import {
     createCompany,
     getCompanies,
@@ -13,10 +13,10 @@ import {
 const router = express.Router();
 
 // router.post('/companies', createCompany);
-router.post('/companies', authMiddleware, createCompany);
-router.get('/companies', authMiddleware, getCompanies);
-router.get('/companies/:id', authMiddleware, getCompanyById);
-router.put('/companies/:id', authMiddleware, updateCompany);
-router.delete('/companies/:id', authMiddleware, deleteCompany);
+router.post('/companies', authorize(['USER', 'ADMIN']),  createCompany);
+router.get('/companies', authorize('ADMIN'), getCompanies);
+router.get('/companies/:id',authorize('ADMIN'),  getCompanyById);
+router.put('/companies/:id',authorize('ADMIN'), updateCompany);
+router.delete('/companies/:id',authorize('ADMIN'), deleteCompany);
 
 export default router;

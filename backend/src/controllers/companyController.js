@@ -1,6 +1,7 @@
 // backend/src/controllers/companyController.js
 
 import { PrismaClient } from '@prisma/client';
+import logger from '../utis/logger';
 
 
 
@@ -22,8 +23,10 @@ export const createCompany = async (req, res) => {
         const newCompany = await prisma.company.create({
             data: { name, address, contactEmail, contactPhone, industry },
         });
+        logger.info(`Company created: ${company.name}`);
         res.status(201).json(newCompany);
     } catch (error) {
+        logger.error(`Error creating companies: ${error.message}`)
         res.status(500).json({ error: 'Failed to create company' });
     }
 };
@@ -37,8 +40,10 @@ export const createCompany = async (req, res) => {
 export const getCompanies = async (req, res) => {
     try {
         const companies = await prisma.company.findMany();
+
         res.status(200).json(companies);
     } catch (error) {
+        logger.error(`Error fetching companies`)
         res.status(500).json({ error: 'Failed to fetch companies' });
     }
 };
@@ -55,11 +60,14 @@ export const getCompanyById = async (req, res) => {
         const { id } = req.params;
         const company = await prisma.company.findUnique({ where: { id: Number(id) } });
         if (company) {
+            logger.info(`success:${company}`)
             res.status(200).json(company);
         } else {
+            logger.error(`No compny with name: ${company}`)
             res.status(404).json({ error: 'Company not found' });
         }
     } catch (error) {
+        logger.error(`faied to fetch ${company}`)
         res.status(500).json({ error: 'Failed to fetch company' });
     }
 };
@@ -79,8 +87,10 @@ export const updateCompany = async (req, res) => {
             where: { id: Number(id) },
             data: { name, address, contactEmail, contactPhone, industry },
         });
+        logger.info(`${company} updated`)
         res.status(200).json(updatedCompany);
     } catch (error) {
+        logger.error(`faied to update ${company}`)
         res.status(500).json({ error: 'Failed to update company' });
     }
 };
@@ -95,8 +105,10 @@ export const deleteCompany = async (req, res) => {
     try {
         const { id } = req.params;
         await prisma.company.delete({ where: { id: Number(id) } });
+        logger.info(`${company} deleted`)
         res.status(204).end();
     } catch (error) {
+        logger.error(`faied to delete ${company}`)
         res.status(500).json({ error: 'Failed to delete company' });
     }
 };
