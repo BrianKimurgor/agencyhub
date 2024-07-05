@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-
+import logger from '../utils/logger.js'; // Importing the logger module
 const prisma = new PrismaClient();
 
 /**
@@ -15,11 +15,13 @@ export const createIntegration = async (req, res) => {
             data: {
                 agencyId,
                 type,
-                settings: JSON.parse(settings)  // Assuming settings is sent as a JSON string
+                settings: JSON.parse(settings) // Assuming settings is sent as a JSON string
             }
         });
+        logger.info(`${integration} created`); // Using logger to log the creation
         res.status(201).json(integration);
     } catch (error) {
+        logger.error(`failed to create: ${error}`); // Using logger to log the error
         res.status(400).json({ error: error.message });
     }
 };
@@ -37,10 +39,12 @@ export const getIntegration = async (req, res) => {
             where: { id: parseInt(id) }
         });
         if (!integration) {
+            logger.error(`failed to find ${id} record`); // Using logger to log the error
             return res.status(404).json({ error: 'Integration record not found' });
         }
         res.status(200).json(integration);
     } catch (error) {
+        logger.error(`failed to get: ${error}`); // Using logger to log the error
         res.status(500).json({ error: error.message });
     }
 };
@@ -57,14 +61,12 @@ export const updateIntegration = async (req, res) => {
     try {
         const integration = await prisma.integration.update({
             where: { id: parseInt(id) },
-            data: {
-                agencyId,
-                type,
-                settings: JSON.parse(settings)  // Assuming settings is sent as a JSON string
-            }
+            data: { agencyId, type, settings: JSON.parse(settings) } // Assuming settings is sent as a JSON string
         });
+        logger.info(`${integration} updated`); // Using logger to log the update
         res.status(200).json(integration);
     } catch (error) {
+        logger.error(`failed to update: ${error}`); // Using logger to log the error
         res.status(400).json({ error: error.message });
     }
 };

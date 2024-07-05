@@ -1,4 +1,6 @@
 import { PrismaClient } from '@prisma/client';
+import logger from '../utils/logger.js';
+
 
 const prisma = new PrismaClient();
 
@@ -21,8 +23,10 @@ export const createBranding = async (req, res) => {
                 footerText
             }
         });
+        logger.info(`${branding} created`)
         res.status(201).json(branding);
     } catch (error) {
+        logger.error(`failed to create:${branding}`)
         res.status(400).json({ error: error.message });
     }
 };
@@ -40,10 +44,12 @@ export const getBranding = async (req, res) => {
             where: { id: parseInt(id) }
         });
         if (!branding) {
+            logger.error(`failed to find ${branding} record`)
             return res.status(404).json({ error: 'Branding record not found' });
         }
         res.status(200).json(branding);
     } catch (error) {
+        logger.error(`failed to get:${branding}`)
         res.status(500).json({ error: error.message });
     }
 };
@@ -62,8 +68,10 @@ export const updateBranding = async (req, res) => {
             where: { id: parseInt(id) },
             data: { agencyId, logoUrl, primaryColor, secondaryColor, welcomeText, footerText }
         });
+        logger.info(`${branding} updated`)
         res.status(200).json(branding);
     } catch (error) {
+        logger.error(`failed to update ${branding} `)
         res.status(400).json({ error: error.message });
     }
 };

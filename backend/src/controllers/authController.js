@@ -1,6 +1,6 @@
 // src/controllers/authController.js
 import { loginService, registerService } from '../services/authService.js';
-import logger from '../utis/logger.js';
+
 
 export const login = async (req, res) => {
   const { email, password, name, role } = req.body;

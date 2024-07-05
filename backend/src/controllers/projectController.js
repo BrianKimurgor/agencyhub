@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import logger from '../utils/logger.js';
 
 const prisma = new PrismaClient();
 
@@ -19,8 +20,10 @@ export const createProject = async (req, res) => {
                 endDate: endDate ? new Date(endDate) : null
             }
         });
+        logger.info(`${project} created`)
         res.status(201).json(project);
     } catch (error) {
+        logger.error(`failed to create ${project}`)
         res.status(400).json({ error: error.message });
     }
 };
@@ -42,6 +45,7 @@ export const getProject = async (req, res) => {
         }
         res.status(200).json(project);
     } catch (error) {
+        logger.error(`failed to get ${project}`)
         res.status(500).json({ error: error.message });
     }
 };
@@ -65,8 +69,10 @@ export const updateProject = async (req, res) => {
                 endDate: endDate ? new Date(endDate) : null
             }
         });
+        logger.info(`${project} updated`)
         res.status(200).json(project);
     } catch (error) {
+        logger.error(`failed to update ${project}`)
         res.status(400).json({ error: error.message });
     }
 };

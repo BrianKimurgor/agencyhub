@@ -1,7 +1,7 @@
 // backend/src/controllers/companyController.js
 
 import { PrismaClient } from '@prisma/client';
-import logger from '../utis/logger';
+import logger from '../utils/logger.js'
 
 
 
