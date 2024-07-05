@@ -23,7 +23,7 @@ export const createBranding = async (req, res) => {
                 footerText
             }
         });
-        logger.info(`${branding} created`)
+        logger.info(`${branding.agencyId} created`)
         res.status(201).json(branding);
     } catch (error) {
         logger.error(`failed to create:${branding}`)
@@ -68,7 +68,7 @@ export const updateBranding = async (req, res) => {
             where: { id: parseInt(id) },
             data: { agencyId, logoUrl, primaryColor, secondaryColor, welcomeText, footerText }
         });
-        logger.info(`${branding} updated`)
+        logger.info(`${branding.id} updated`)
         res.status(200).json(branding);
     } catch (error) {
         logger.error(`failed to update ${branding} `)
@@ -88,8 +88,10 @@ export const deleteBranding = async (req, res) => {
         await prisma.branding.delete({
             where: { id: parseInt(id) }
         });
-        res.status(204).send();
+        logger.info(`${id} deleted`)
+        res.status(204).send({success:`${id} deleted`});
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        logger.error(`the ${id} is unavailable`)
+        res.status(500).json({ error: "the data is not available"});
     }
 };
