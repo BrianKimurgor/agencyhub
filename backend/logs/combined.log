@@ -69,3 +69,4 @@ Invalid `prisma.company.create()` invocation:
 Argument `agencyId`: Invalid value provided. Expected Int, provided String.
 2024-07-09T07:19:35.744Z info: Company created: agency
 2024-07-09T07:38:53.531Z info: Company created: agency
+2024-07-09T11:51:39.446Z info: Company created: Laikipia University
