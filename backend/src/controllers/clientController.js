@@ -20,10 +20,10 @@ export const createClient = async (req, res) => {
                 companyId
             }
         });
-        logger.info(`${client} created`); // Using logger to log the creation
+        logger.info(`${client.name} created`);
         res.status(201).json(client);
     } catch (error) {
-        logger.error(`failed to create: ${error}`); // Using logger to log the error
+        logger.error(`failed to create: ${error}`);
         res.status(400).json({ error: error.message });
     }
 };
@@ -41,12 +41,12 @@ export const getClient = async (req, res) => {
             where: { id: parseInt(id) }
         });
         if (!client) {
-            logger.error(`failed to find ${id} record`); // Using logger to log the error
+            logger.error(`failed to find ${id} record`);
             return res.status(404).json({ error: 'Client not found' });
         }
         res.status(200).json(client);
     } catch (error) {
-        logger.error(`failed to get: ${error}`); // Using logger to log the error
+        logger.error(`failed to get: ${error}`);
         res.status(500).json({ error: error.message });
     }
 };
@@ -65,10 +65,10 @@ export const updateClient = async (req, res) => {
             where: { id: parseInt(id) },
             data: { name, email, phone, address, companyId }
         });
-        logger.info(`${client} updated`); // Using logger to log the update
+        logger.info(`${client.name} updated`);
         res.status(200).json(client);
     } catch (error) {
-        logger.error(`failed to update: ${error}`); // Using logger to log the error
+        logger.error(`failed to update: ${error}`);
         res.status(400).json({ error: error.message });
     }
 };
@@ -85,8 +85,9 @@ export const deleteClient = async (req, res) => {
         await prisma.client.delete({
             where: { id: parseInt(id) }
         });
+        logger.info(`${client.name} deleted`)
         res.status(204).send();
     } catch (error) {
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ error: `cannot find ${id}`});
     }
 };

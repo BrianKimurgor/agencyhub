@@ -2,8 +2,7 @@
 
 import { PrismaClient } from '@prisma/client';
 import logger from '../utils/logger.js'
-
-
+import { v4 as uuidv4 } from 'uuid';
 
 const prisma = new PrismaClient()
 
@@ -23,7 +22,7 @@ export const createCompany = async (req, res) => {
         const newCompany = await prisma.company.create({
             data: { name, address, contactEmail, contactPhone, industry },
         });
-        logger.info(`Company created: ${company.name}`);
+        logger.info(`Company created: ${newCompany.name}`);
         res.status(201).json(newCompany);
     } catch (error) {
         logger.error(`Error creating companies: ${error.message}`)
@@ -82,10 +81,10 @@ export const getCompanyById = async (req, res) => {
 export const updateCompany = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, address, contactEmail, contactPhone, industry } = req.body;
+        const { name, address, contactEmail, contactPhone, industry, agencyId } = req.body;
         const updatedCompany = await prisma.company.update({
             where: { id: Number(id) },
-            data: { name, address, contactEmail, contactPhone, industry },
+            data: { name, address, contactEmail, contactPhone, industry, agencyId },
         });
         logger.info(`${company} updated`)
         res.status(200).json(updatedCompany);

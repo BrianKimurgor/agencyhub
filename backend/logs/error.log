@@ -8,3 +8,48 @@
 2024-07-05T11:27:00.059Z error: the 1 is unavailable
 2024-07-05T11:27:41.136Z error: the 1 is unavailable
 2024-07-05T12:21:25.265Z error: failed to find null record
+2024-07-08T07:14:26.144Z error: failed to create 
+2024-07-08T07:17:03.581Z error: failed to create project
+2024-07-08T09:28:51.706Z error: failed to create project
+2024-07-08T13:26:27.162Z error: failed to create:brand
+2024-07-08T13:26:53.418Z error: failed to create:brand
+2024-07-08T13:28:24.947Z error: failed to create:brand
+2024-07-08T13:30:23.825Z error: failed to create:brand
+2024-07-09T06:38:56.105Z error: Register error: 
+Invalid `prisma.user.create()` invocation:
+
+
+Unique constraint failed on the constraint: `User_email_key`
+2024-07-09T06:42:08.216Z error: Error creating companies: 
+Invalid `prisma.company.create()` invocation:
+
+{
+  data: {
+    name: "Your Company Name",
+    address: "123 Main Street",
+    contactEmail: "contact@yourcompany.com",
+    contactPhone: "+1234567890",
+    industry: "Marketing",
++   agencyId: Int
+  }
+}
+
+Argument `agencyId` is missing.
+2024-07-09T06:46:28.592Z error: Error creating companies: company is not defined
+2024-07-09T06:49:32.186Z error: Error creating companies: company is not defined
+2024-07-09T07:13:26.219Z error: Error creating companies: 
+Invalid `prisma.company.create()` invocation:
+
+{
+  data: {
+    name: "agency",
+    address: "123 Main Street",
+    contactEmail: "contact@agencyy.com",
+    contactPhone: "+1234567890",
+    industry: "Marketing",
+    agencyId: "34e47caf-773a-4325-b694-bae35b8a99d0"
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  }
+}
+
+Argument `agencyId`: Invalid value provided. Expected Int, provided String.

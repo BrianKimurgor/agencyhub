@@ -26,7 +26,7 @@ export const createBranding = async (req, res) => {
         logger.info(`${branding.agencyId} created`)
         res.status(201).json(branding);
     } catch (error) {
-        logger.error(`failed to create:${branding}`)
+        logger.error(`failed to create:brand`)
         res.status(400).json({ error: error.message });
     }
 };
