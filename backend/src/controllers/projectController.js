@@ -23,7 +23,7 @@ export const createProject = async (req, res) => {
         logger.info(`${project} created`)
         res.status(201).json(project);
     } catch (error) {
-        logger.error(`failed to create ${project}`)
+        logger.error(`failed to create project`)
         res.status(400).json({ error: error.message });
     }
 };
