@@ -3,7 +3,17 @@ import logger from '../utils/logger.js';
 
 const prisma = new PrismaClient();
 
-// Create a new company
+/**
+ * Create a new company
+ * @param {Object} req - The request object
+ * @param {Object} req.body - The request body
+ * @param {string} req.body.name - The name of the company
+ * @param {string} req.body.address - The address of the company
+ * @param {string} req.body.contactEmail - The contact email of the company
+ * @param {string} req.body.contactPhone - The contact phone number of the company
+ * @param {string} req.body.industry - The industry of the company
+ * @param {Object} res - The response object
+ */
 export const createCompany = async (req, res) => {
     try {
         const { name, address, contactEmail, contactPhone, industry } = req.body;
@@ -18,7 +28,11 @@ export const createCompany = async (req, res) => {
     }
 };
 
-// Get all companies
+/**
+ * Get all companies
+ * @param {Object} req - The request object
+ * @param {Object} res - The response object
+ */
 export const getCompanies = async (req, res) => {
     try {
         const companies = await prisma.company.findMany();
@@ -29,7 +43,13 @@ export const getCompanies = async (req, res) => {
     }
 };
 
-// Get a single company by ID
+/**
+ * Get a single company by ID
+ * @param {Object} req - The request object
+ * @param {Object} req.params - The request parameters
+ * @param {string} req.params.id - The ID of the company
+ * @param {Object} res - The response object
+ */
 export const getCompanyById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -47,7 +67,19 @@ export const getCompanyById = async (req, res) => {
     }
 };
 
-// Update a company
+/**
+ * Update a company
+ * @param {Object} req - The request object
+ * @param {Object} req.params - The request parameters
+ * @param {string} req.params.id - The ID of the company
+ * @param {Object} req.body - The request body
+ * @param {string} req.body.name - The name of the company
+ * @param {string} req.body.address - The address of the company
+ * @param {string} req.body.contactEmail - The contact email of the company
+ * @param {string} req.body.contactPhone - The contact phone number of the company
+ * @param {string} req.body.industry - The industry of the company
+ * @param {Object} res - The response object
+ */
 export const updateCompany = async (req, res) => {
     try {
         const { id } = req.params;
@@ -66,7 +98,13 @@ export const updateCompany = async (req, res) => {
     }
 };
 
-// Delete a company
+/**
+ * Delete a company
+ * @param {Object} req - The request object
+ * @param {Object} req.params - The request parameters
+ * @param {string} req.params.id - The ID of the company
+ * @param {Object} res - The response object
+ */
 export const deleteCompany = async (req, res) => {
     try {
         const { id } = req.params;

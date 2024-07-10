@@ -324,3 +324,7 @@ Invalid `prisma.company.update()` invocation:
 Argument `id` is missing.
 2024-07-10T11:44:06.519Z info: Company with ID 17 deleted successfully
 2024-07-10T11:47:49.892Z info: Company with ID 15 updated successfully
+2024-07-10T12:02:08.186Z info: Company created: Tech Solutions Ltd.
+2024-07-10T12:04:24.529Z info: Company with ID 15 updated successfully
+2024-07-10T12:05:06.657Z info: Company found: main
+2024-07-10T12:05:48.420Z info: Company with ID 18 deleted successfully
