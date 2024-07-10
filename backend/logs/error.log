@@ -283,3 +283,8 @@ Invalid `prisma.company.update()` invocation:
 }
 
 Argument `id` is missing.
+2024-07-10T12:19:46.183Z error: Failed to update company with ID 0: 
+Invalid `prisma.company.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. Record to update not found.

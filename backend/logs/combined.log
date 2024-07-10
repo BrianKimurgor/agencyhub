@@ -328,3 +328,14 @@ Argument `id` is missing.
 2024-07-10T12:04:24.529Z info: Company with ID 15 updated successfully
 2024-07-10T12:05:06.657Z info: Company found: main
 2024-07-10T12:05:48.420Z info: Company with ID 18 deleted successfully
+2024-07-10T12:19:46.183Z error: Failed to update company with ID 0: 
+Invalid `prisma.company.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. Record to update not found.
+2024-07-10T12:23:49.008Z info: Company with ID 15 updated successfully
+2024-07-10T12:23:56.835Z info: Company with ID 16 updated successfully
+2024-07-10T12:24:40.444Z info: Company with ID 15 updated successfully
+2024-07-10T12:39:53.925Z info: Company with ID 15 updated successfully
+2024-07-10T13:02:55.206Z info: Company with ID 15 updated successfully
+2024-07-10T13:03:44.505Z info: Company created: Gibbross
