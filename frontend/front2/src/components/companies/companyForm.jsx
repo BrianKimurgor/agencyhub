@@ -1,9 +1,9 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 // src/components/companies/CompanyForm.jsx
-import React, { useState } from 'react';
-import useCompany from '../../hooks/useCompany';
+import React, { useState, useEffect } from 'react';
 
-const CompanyForm = () => {
+const CompanyForm = ({ onSubmit, initialData }) => {
     const [formData, setFormData] = useState({
         name: '',
         address: '',
@@ -12,7 +12,11 @@ const CompanyForm = () => {
         industry: '',
     });
 
-    const { companies, createCompany } = useCompany();
+    useEffect(() => {
+        if (initialData) {
+            setFormData(initialData);
+        }
+    }, [initialData]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,7 +24,7 @@ const CompanyForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        createCompany(formData);
+        onSubmit(formData);
     };
 
     return (
@@ -74,7 +78,7 @@ const CompanyForm = () => {
                 onChange={handleChange}
             />
 
-            <button type="submit">Create Company</button>
+            <button type="submit">{initialData ? 'Update' : 'Create'} Company</button>
         </form>
     );
 };

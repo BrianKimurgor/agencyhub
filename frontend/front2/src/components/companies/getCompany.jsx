@@ -6,7 +6,14 @@ import { companes } from '../../services/companyService';
 
 const GetCompanyController = () => {
     const [companies, setCompanies] = useState([]);
-    const [editingCompany, setEditingCompany] = useState(null);
+    const [editingCompany, setEditingCompany] = useState({
+        id: 0,
+        name: '',
+        address: '',
+        contactEmail: '',
+        contactPhone: '',
+        industry: ''
+    });
 
     useEffect(() => {
         companes.getCompanies().then(data => setCompanies(data));
@@ -33,6 +40,7 @@ const GetCompanyController = () => {
 
     const handleEditCompany = (company) => {
         setEditingCompany(company);
+        console.log(company)
     };
 
     return (
@@ -44,7 +52,7 @@ const GetCompanyController = () => {
             />
             <CompanyList
                 companies={companies}
-                onEdit={handleEditCompany}
+                onEdit={(company) => handleEditCompany(company)}
                 onDelete={handleDeleteCompany}
             />
         </div>
