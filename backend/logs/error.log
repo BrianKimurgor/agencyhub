@@ -249,3 +249,37 @@ Invalid `prisma.company.update()` invocation:
 }
 
 Argument `id` is missing.
+2024-07-10T11:42:03.115Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T11:43:40.579Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.

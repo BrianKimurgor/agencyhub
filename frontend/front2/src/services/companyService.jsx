@@ -14,7 +14,7 @@ const createCompany = async (companyData) => {
 };
 
 const updateCompany = async (companyData) => {
-    const response = await axios.put(`${apiUrl}/${companyData.id}`, companyData);
+    const response = await axios.put(apiUrl + '/' + companyData.id, companyData);
     return response.data;
 };
 

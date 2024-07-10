@@ -26,9 +26,8 @@ const GetCompanyController = () => {
     };
 
     const handleUpdateCompany = (formData) => {
-        companes.updateCompany(editingCompany.id, formData).then(updatedCompany => {
+        companes.updateCompany({...formData, id: editingCompany.id}).then(updatedCompany => {
             setCompanies(companies.map(company => company.id === updatedCompany.id ? updatedCompany : company));
-            setEditingCompany(null);
         });
     };
 
