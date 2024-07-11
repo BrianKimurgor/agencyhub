@@ -1,9 +1,9 @@
-// src/components/BrandingForm.jsx
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react';
-import axios from "axios"
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+// src/components/companies/CompanyForm.jsx
+import React, { useState, useEffect } from 'react';
 
-const CompanyForm = () => {
+const CompanyForm = ({ onSubmit, initialData }) => {
     const [formData, setFormData] = useState({
         name: '',
         address: '',
@@ -12,45 +12,23 @@ const CompanyForm = () => {
         industry: '',
     });
 
-    const [companies, setCompanies] = useState([])
-    const [error, setError] = useState('')
+    useEffect(() => {
+        if (initialData) {
+            setFormData(initialData);
+        }
+    }, [initialData]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    useEffect( ()=>{
-        axios.get("http://localhost:5000/api/companies")
-        .then( res=> setCompanies(res.data))
-        .catch(error => setError(error.message))
-    },[])
-
-    console.log(companies)
-
-    const createCompany = (comanyData) =>{
-        axios.post("http://localhost:5000/api/companies", comanyData).then(
-            res=> console.log(res.data)
-        )
-    }
-
-    const updateCompany = (companyData) => {
-        axios.put("http://localhost:5000/api/companies", companyData)
-        .then(res => console.log(res.data))
-    }
-
-    const deleteCompany = (companyData) => {
-        axios.delete("http://localhost:5000/api/companies", companyData)
-        .then(res => console.log(res.data))
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        createCompany(formData)
+        onSubmit(formData);
     };
 
     return (
         <form onSubmit={handleSubmit}>
-            {/* Name Input */}
             <label htmlFor="name">Company Name:</label>
             <input
                 type="text"
@@ -61,7 +39,6 @@ const CompanyForm = () => {
                 required
             />
 
-            {/* Address Input */}
             <label htmlFor="address">Company Address:</label>
             <input
                 type="text"
@@ -72,7 +49,6 @@ const CompanyForm = () => {
                 required
             />
 
-            {/* Contact Email Input */}
             <label htmlFor="contactEmail">Contact Email:</label>
             <input
                 type="email"
@@ -83,7 +59,6 @@ const CompanyForm = () => {
                 required
             />
 
-            {/* Contact Phone Input */}
             <label htmlFor="contactPhone">Contact Phone:</label>
             <input
                 type="tel"
@@ -94,7 +69,6 @@ const CompanyForm = () => {
                 required
             />
 
-            {/* Industry Input */}
             <label htmlFor="industry">Industry:</label>
             <input
                 type="text"
@@ -104,10 +78,9 @@ const CompanyForm = () => {
                 onChange={handleChange}
             />
 
-            {/* Submit Button */}
-            <button type="submit">Create Company</button>
+            <button type="submit">{initialData ? 'Update' : 'Create'} Company</button>
         </form>
     );
 };
 
-export default CompanyForm
+export default CompanyForm;

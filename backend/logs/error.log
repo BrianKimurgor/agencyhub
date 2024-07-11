@@ -53,3 +53,238 @@ Invalid `prisma.company.create()` invocation:
 }
 
 Argument `agencyId`: Invalid value provided. Expected Int, provided String.
+2024-07-10T09:20:53.072Z error: faied to delete company
+2024-07-10T09:28:13.788Z error: faied to delete company
+2024-07-10T09:30:24.519Z error: Failed to delete company with ID: 
+Invalid `prisma.company.delete()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.
+2024-07-10T09:43:53.456Z error: faied to update company
+2024-07-10T09:46:49.671Z error: faied to update company
+2024-07-10T09:47:12.469Z error: faied to update company
+2024-07-10T09:47:52.914Z error: faied to update company
+2024-07-10T09:48:54.853Z error: faied to update company
+2024-07-10T09:49:35.590Z error: faied to update company
+2024-07-10T09:50:21.157Z error: faied to update company
+2024-07-10T09:50:24.808Z error: faied to update company 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T09:54:08.800Z error: Failed to update company with ID  
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T09:54:39.923Z error: Failed to update company with ID  
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   name: {
++     equals: String | StringFieldRefInput,
++     in: String[],
++     notIn: String[],
++     lt: String | StringFieldRefInput,
++     lte: String | StringFieldRefInput,
++     gt: String | StringFieldRefInput,
++     gte: String | StringFieldRefInput,
++     contains: String | StringFieldRefInput,
++     startsWith: String | StringFieldRefInput,
++     endsWith: String | StringFieldRefInput,
++     not: String | NestedStringFilter
++   }
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `name` is missing.
+2024-07-10T09:55:07.506Z error: Failed to update company with ID  
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
+    name: "undefined",
+?   id?: Int,
+?   AND?: CompanyWhereInput | CompanyWhereInput[],
+?   OR?: CompanyWhereInput[],
+?   NOT?: CompanyWhereInput | CompanyWhereInput[],
+?   address?: StringNullableFilter | String | Null,
+?   contactEmail?: StringNullableFilter | String | Null,
+?   contactPhone?: StringNullableFilter | String | Null,
+?   industry?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime,
+?   updatedAt?: DateTimeFilter | DateTime,
+?   socialMedia?: SocialMediaListRelationFilter,
+?   news?: NewsListRelationFilter,
+?   clients?: ClientListRelationFilter,
+?   subAgencies?: SubAgencyListRelationFilter,
+?   performances?: PerformanceListRelationFilter,
+?   brandings?: BrandingListRelationFilter,
+?   integrations?: IntegrationListRelationFilter
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `where` of type CompanyWhereUniqueInput needs at least one of `id` arguments. Available options are marked with ?.
+2024-07-10T09:59:11.114Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T10:03:53.223Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T10:18:51.382Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T10:18:55.124Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T10:42:17.771Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T11:42:03.115Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T11:43:40.579Z error: Failed to update company with ID undefined: 
+Invalid `prisma.company.update()` invocation:
+
+{
+  where: {
++   id: Int
+  },
+  data: {
+    name: undefined,
+    address: undefined,
+    contactEmail: undefined,
+    contactPhone: undefined,
+    industry: undefined
+  }
+}
+
+Argument `id` is missing.
+2024-07-10T12:19:46.183Z error: Failed to update company with ID 0: 
+Invalid `prisma.company.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. Record to update not found.
