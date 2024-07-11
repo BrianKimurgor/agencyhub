@@ -28,6 +28,17 @@ export const createProject = async (req, res) => {
     }
 };
 
+
+export const getProjects = async (req, res) => {
+    try {
+        const projects = await prisma.project.findMany()
+        res.status(200).json(projects)
+    } catch (error) {
+        logger.error(`Error fetching projects: ${error.message}`);
+        res.status(500).json({ error: 'Failed to fetch projects' });
+
+    }
+}
 /**
  * Retrieves a project based on the provided ID from the request parameters.
  * @param {Object} req - The request object containing parameters.
@@ -65,8 +76,8 @@ export const updateProject = async (req, res) => {
             data: {
                 name,
                 description,
-                startDate: startDate ? new Date(startDate) : null,
-                endDate: endDate ? new Date(endDate) : null
+                startDate,
+                endDate,
             }
         });
         logger.info(`${project} updated`)

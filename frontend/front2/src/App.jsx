@@ -9,6 +9,7 @@ import ClientList from './components/client/clientList';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useClient } from './hooks/useClient';
+import ProjectGrid from './components/projects/projectGrid';
 
 function App() {
   const [companies, setCompanies] = useState([]);
@@ -69,35 +70,39 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <nav>
-          <ul>
-            <li><Link to="/companies">Companies</Link></li>
-            <li><Link to="/branding">Branding</Link></li>
-            <li><Link to="/clients">Clients</Link></li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/companies" element={
-            <>
-              <CompanyForm onSubmit={(formData) => handleCreateCompany(formData)} />
-              <GetCompanyController
-                handleEditCompany={(company) => handleEditCompany(company)}
-                handleDeleteCompany={(id) => handleDeleteCompany(id)}
-                handleUpdateCompany={(formData) => handleUpdateCompany(formData)}
-                companies={companies}
-              />
-            </>
-          } />
-          <Route path="/branding" element={<BrandingList />} />
-          <Route path="/branding/new" element={<BrandingForm />} />
-          <Route path="/clients" element={<ClientList clients={clientsList} handleEditClient={handleEditClient} handleDeleteClient={handleDeleteClient} />} />
-          <Route path="/clients/new" element={<ClientForm onSubmit={handleCreateClient} />} />
-          <Route path="/clients/edit" element={<ClientForm onSubmit={handleUpdateClient} editingClient={editingClient} />} />
-        </Routes>
-      </div>
-    </Router>
+    // <Router>
+    //   <div className="App">
+    //     <nav>
+    //       <ul>
+    //         <li><Link to="/companies">Companies</Link></li>
+    //         <li><Link to="/branding">Branding</Link></li>
+    //         <li><Link to="/clients">Clients</Link></li>
+    //       </ul>
+    //     </nav>
+    //     <Routes>
+    //       <Route path="/companies" element={
+    //         <>
+    //           <CompanyForm onSubmit={(formData) => handleCreateCompany(formData)} />
+    //           <GetCompanyController
+    //             handleEditCompany={(company) => handleEditCompany(company)}
+    //             handleDeleteCompany={(id) => handleDeleteCompany(id)}
+    //             handleUpdateCompany={(formData) => handleUpdateCompany(formData)}
+    //             companies={companies}
+    //           />
+    //         </>
+    //       } />
+    //       <Route path="/" element={<ProjectGrid/>} />
+    //       <Route path="/branding" element={<BrandingList />} />
+    //       <Route path="/branding/new" element={<BrandingForm />} />
+    //       <Route path="/clients" element={<ClientList clients={clientsList} handleEditClient={handleEditClient} handleDeleteClient={handleDeleteClient} />} />
+    //       <Route path="/clients/new" element={<ClientForm onSubmit={handleCreateClient} />} />
+    //       <Route path="/clients/edit" element={<ClientForm onSubmit={handleUpdateClient} editingClient={editingClient} />} />
+    //     </Routes>
+    //   </div>
+
+    // </Router>
+    <ProjectGrid/>
+
   );
 }
 
