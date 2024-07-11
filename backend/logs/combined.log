@@ -445,3 +445,47 @@ Foreign key constraint failed on the field: `companyId`
 2024-07-11T09:30:25.867Z info: Brian created
 2024-07-11T09:30:26.788Z info: Brian created
 2024-07-11T09:30:27.632Z info: Brian created
+2024-07-11T10:17:16.212Z info: [object Object] created
+2024-07-11T10:17:19.129Z info: [object Object] created
+2024-07-11T10:17:20.577Z info: [object Object] created
+2024-07-11T10:17:22.463Z info: [object Object] created
+2024-07-11T10:17:59.575Z error: Error fetching companies: Cannot read properties of undefined (reading 'findmany')
+2024-07-11T10:18:42.062Z error: Error fetching projects: Cannot read properties of undefined (reading 'findMany')
+2024-07-11T12:05:44.946Z info: [object Object] created
+2024-07-11T12:05:47.257Z info: [object Object] created
+2024-07-11T12:05:48.941Z info: [object Object] created
+2024-07-11T12:05:50.266Z info: [object Object] created
+2024-07-11T12:05:51.727Z info: [object Object] created
+2024-07-11T12:05:53.034Z info: [object Object] created
+2024-07-11T13:01:55.023Z info: [object Object] updated
+2024-07-11T13:01:55.791Z info: [object Object] updated
+2024-07-11T13:02:18.757Z info: [object Object] updated
+2024-07-11T13:02:20.638Z info: [object Object] updated
+2024-07-11T13:02:36.371Z info: [object Object] updated
+2024-07-11T13:02:37.565Z info: [object Object] updated
+2024-07-11T13:21:08.695Z info: [object Object] updated
+2024-07-11T13:21:10.866Z info: [object Object] updated
+2024-07-11T13:21:12.825Z info: [object Object] updated
+2024-07-11T13:21:13.060Z info: [object Object] updated
+2024-07-11T13:21:13.220Z info: [object Object] updated
+2024-07-11T13:21:13.512Z info: [object Object] updated
+2024-07-11T13:21:13.895Z info: [object Object] updated
+2024-07-11T13:22:41.641Z info: [object Object] updated
+2024-07-11T13:28:36.788Z info: [object Object] updated
+2024-07-11T13:28:52.384Z info: [object Object] updated
+2024-07-11T13:28:53.870Z info: [object Object] updated
+2024-07-11T13:28:54.335Z info: [object Object] updated
+2024-07-11T13:37:40.689Z info: [object Object] created
+2024-07-11T13:37:45.852Z info: [object Object] created
+2024-07-11T13:38:24.695Z info: [object Object] updated
+2024-07-11T13:38:27.092Z info: [object Object] updated
+2024-07-11T13:38:27.446Z info: [object Object] updated
+2024-07-11T13:38:30.753Z info: [object Object] updated
+2024-07-11T13:42:59.334Z info: [object Object] updated
+2024-07-11T13:43:42.415Z info: [object Object] updated
+2024-07-11T13:44:38.586Z info: [object Object] updated
+2024-07-11T13:48:45.164Z info: [object Object] updated
+2024-07-11T13:48:45.765Z info: [object Object] updated
+2024-07-11T13:55:26.075Z info: [object Object] updated
+2024-07-11T13:56:30.226Z info: [object Object] updated
+2024-07-11T14:04:44.739Z info: [object Object] updated
