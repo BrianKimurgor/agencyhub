@@ -288,3 +288,92 @@ Invalid `prisma.company.update()` invocation:
 
 
 An operation failed because it depends on one or more records that were required but not found. Record to update not found.
+2024-07-11T07:42:09.143Z error: failed to create:brand
+2024-07-11T07:44:41.857Z error: failed to create:brand
+2024-07-11T07:46:41.442Z error: failed to create:brand
+2024-07-11T07:49:05.957Z error: failed to get:undefined
+2024-07-11T07:49:06.151Z error: failed to get:undefined
+2024-07-11T08:20:55.981Z error: failed to get:undefined
+2024-07-11T08:20:56.044Z error: failed to get:undefined
+2024-07-11T08:25:41.698Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: "15"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:25:54.388Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: "12"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:31:59.222Z error: failed to get:undefined
+2024-07-11T08:31:59.294Z error: failed to get:undefined
+2024-07-11T08:33:28.776Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: "14"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:33:59.838Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: ""
+               ~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:34:47.419Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: "1"
+               ~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:38:28.830Z error: failed to create: PrismaClientKnownRequestError: 
+Invalid `prisma.client.create()` invocation:
+
+
+Foreign key constraint failed on the field: `companyId`

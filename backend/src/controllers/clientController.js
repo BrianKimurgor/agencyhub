@@ -28,6 +28,18 @@ export const createClient = async (req, res) => {
     }
 };
 
+
+export const getClients = async (req, res) => {
+    try {
+        const clients = await prisma.client.findMany();
+        res.status(200).json(clients)
+    } catch (error) {
+        logger.error(`Error fetching clients: ${error.message}`);
+        res.status(500).json({ error: 'Failed to fetch clients' });
+
+    }
+}
+
 /**
  * Retrieves a client based on the provided ID from the request parameters.
  * @param {Object} req - The request object containing parameters.
@@ -86,6 +98,7 @@ export const deleteClient = async (req, res) => {
             where: { id: parseInt(id) }
         });
         logger.info(`${client.name} deleted`)
+        console.log(`${client.name} deleted`)
         res.status(204).send();
     } catch (error) {
         res.status(500).json({ error: `cannot find ${id}`});
