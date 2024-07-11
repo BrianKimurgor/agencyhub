@@ -49,7 +49,7 @@ export const getBranding = async (req, res) => {
         }
         res.status(200).json(branding);
     } catch (error) {
-        logger.error(`failed to get:${branding}`)
+        logger.error(`failed to get:${id}`)
         res.status(500).json({ error: error.message });
     }
 };

@@ -339,3 +339,109 @@ An operation failed because it depends on one or more records that were required
 2024-07-10T12:39:53.925Z info: Company with ID 15 updated successfully
 2024-07-10T13:02:55.206Z info: Company with ID 15 updated successfully
 2024-07-10T13:03:44.505Z info: Company created: Gibbross
+2024-07-10T13:05:19.470Z info: Company with ID 16 deleted successfully
+2024-07-11T06:41:54.898Z info: Company created: Gibbross
+2024-07-11T07:42:09.143Z error: failed to create:brand
+2024-07-11T07:44:41.857Z error: failed to create:brand
+2024-07-11T07:46:41.442Z error: failed to create:brand
+2024-07-11T07:49:05.957Z error: failed to get:undefined
+2024-07-11T07:49:06.151Z error: failed to get:undefined
+2024-07-11T08:20:55.981Z error: failed to get:undefined
+2024-07-11T08:20:56.044Z error: failed to get:undefined
+2024-07-11T08:25:41.698Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: "15"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:25:54.388Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: "12"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:31:59.222Z error: failed to get:undefined
+2024-07-11T08:31:59.294Z error: failed to get:undefined
+2024-07-11T08:33:28.776Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: "14"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:33:59.838Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: ""
+               ~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:34:47.419Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "503, 27",
+    companyId: "1"
+               ~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-11T08:38:28.830Z error: failed to create: PrismaClientKnownRequestError: 
+Invalid `prisma.client.create()` invocation:
+
+
+Foreign key constraint failed on the field: `companyId`
+2024-07-11T08:38:42.718Z info: Brian created
+2024-07-11T08:38:45.728Z info: Brian created
+2024-07-11T08:38:47.277Z info: Brian created
+2024-07-11T09:07:47.155Z info: Brian Kimurgor created
+2024-07-11T09:07:56.007Z info: Brian Kimurgor created
+2024-07-11T09:20:51.413Z info: Company with ID 20 deleted successfully
+2024-07-11T09:30:19.585Z info: Brian created
+2024-07-11T09:30:20.690Z info: Brian created
+2024-07-11T09:30:22.185Z info: Brian created
+2024-07-11T09:30:23.145Z info: Brian created
+2024-07-11T09:30:23.964Z info: Brian created
+2024-07-11T09:30:24.957Z info: Brian created
+2024-07-11T09:30:25.867Z info: Brian created
+2024-07-11T09:30:26.788Z info: Brian created
+2024-07-11T09:30:27.632Z info: Brian created

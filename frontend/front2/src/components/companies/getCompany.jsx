@@ -4,10 +4,11 @@ import React, {  } from 'react';
 import CompanyForm from './companyForm';
 import CompanyList from './companyList';
 
-const GetCompanyController = ({handleDeleteCompany, editingCompany, handleUpdateCompany, companies, handleEditCompany}) => {
-
-
-
+const GetCompanyController = ({handleDeleteCompany,
+    editingCompany,
+    handleUpdateCompany,
+    companies,
+    handleEditCompany}) => {
     return (
         <div>
             <h1>Company Management</h1>
