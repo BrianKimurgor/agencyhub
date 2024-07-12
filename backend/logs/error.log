@@ -379,3 +379,11 @@ Invalid `prisma.client.create()` invocation:
 Foreign key constraint failed on the field: `companyId`
 2024-07-11T10:17:59.575Z error: Error fetching companies: Cannot read properties of undefined (reading 'findmany')
 2024-07-11T10:18:42.062Z error: Error fetching projects: Cannot read properties of undefined (reading 'findMany')
+2024-07-12T05:49:07.645Z error: failed to get:undefined
+2024-07-12T05:49:07.676Z error: failed to get:undefined
+2024-07-12T06:09:44.341Z error: failed to get:undefined
+2024-07-12T06:09:44.383Z error: failed to get:undefined
+2024-07-12T06:09:49.201Z error: failed to get:undefined
+2024-07-12T06:09:49.224Z error: failed to get:undefined
+2024-07-12T12:53:55.499Z error: failed to get:undefined
+2024-07-12T12:53:55.550Z error: failed to get:undefined
