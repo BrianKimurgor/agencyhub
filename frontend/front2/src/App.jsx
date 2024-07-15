@@ -7,11 +7,13 @@ import BrandingList from './components/branding/brandingList';
 import ClientForm from './components/client/clientForm';
 import ClientList from './components/client/clientList';
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { useClient } from './hooks/useClient';
 import ProjectGrid from './components/projects/projectGrid';
 import ResourceForm from './components/resourceAllocation/resourceForm';
 import ResourceGrid from './components/resourceAllocation/resourceGrid';
+import LoginForm from './login/LoginForm';
+import RegisterGrid from './services/registerService';
 
 function App() {
   const [companies, setCompanies] = useState([]);
@@ -74,14 +76,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <ul>
-            <li><Link to="/companies">Companies</Link></li>
-            <li><Link to="/branding">Branding</Link></li>
-            <li><Link to="/clients">Clients</Link></li>
-            <li><Link to="/resources">Resources</Link></li>
-          </ul>
-        </nav>
         <Routes>
           <Route path="/companies" element={
             <>
@@ -94,9 +88,11 @@ function App() {
               />
             </>
           } />
-          <Route path="/" element={<ProjectGrid/>} />
-          <Route path="/resource" element={<ResourceForm/>} />
-          <Route path="/resources" element={<ResourceGrid/>} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterGrid />} />
+          <Route path="/" element={<ProjectGrid />} />
+          <Route path="/resource" element={<ResourceForm />} />
+          <Route path="/resources" element={<ResourceGrid />} />
           <Route path="/branding" element={<BrandingList />} />
           <Route path="/branding/new" element={<BrandingForm />} />
           <Route path="/clients" element={<ClientList clients={clientsList} handleEditClient={handleEditClient} handleDeleteClient={handleDeleteClient} />} />

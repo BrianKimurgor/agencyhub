@@ -92,7 +92,7 @@ export const updateProject = async (req, res) => {
         logger.info(`${project} updated`)
         res.status(200).json(project);
     } catch (error) {
-        logger.error(`failed to update ${project}`)
+        logger.error(`failed to update project`)
         res.status(400).json({ error: error.message });
     }
 };
