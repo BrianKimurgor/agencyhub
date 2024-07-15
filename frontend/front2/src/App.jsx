@@ -12,8 +12,9 @@ import { useClient } from './hooks/useClient';
 import ProjectGrid from './components/projects/projectGrid';
 import ResourceForm from './components/resourceAllocation/resourceForm';
 import ResourceGrid from './components/resourceAllocation/resourceGrid';
-import LoginForm from './login/LoginForm';
+
 import RegisterGrid from './services/registerService';
+import LoginGrid from './services/loginService';
 
 function App() {
   const [companies, setCompanies] = useState([]);
@@ -88,7 +89,7 @@ function App() {
               />
             </>
           } />
-          <Route path="/login" element={<LoginForm />} />
+          <Route path="/login" element={<LoginGrid />} />
           <Route path="/register" element={<RegisterGrid />} />
           <Route path="/" element={<ProjectGrid />} />
           <Route path="/resource" element={<ResourceForm />} />

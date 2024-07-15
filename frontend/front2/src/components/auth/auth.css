@@ -16,7 +16,7 @@
   }
 
   .form-group {
-    margin-bottom: 15px;
+    margin: 15px;
 
   }
 
@@ -42,8 +42,19 @@
     cursor: pointer;
     border-radius: 25px;
     transition: background-color 0.3s;
+
   }
 
   .primary-button:hover {
     background-color: var(--secondary-color);
+  }
+
+  .login{
+    background: linear-gradient(120deg, #003366, #009688);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
   }

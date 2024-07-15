@@ -13,7 +13,6 @@ const RegisterForm = ({ onRegister }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log('Submitting form with data:', { name, email, password, role });
         onRegister(person);
     };
 
