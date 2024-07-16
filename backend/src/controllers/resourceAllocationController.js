@@ -24,6 +24,23 @@ export const createResourceAllocation = async (req, res) => {
 };
 
 /**
+ * Fetches resource allocations from the database and returns them as a JSON response.
+ *
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Promise<void>} - A promise that resolves when the response is sent.
+ */
+export const getResourseAllocations = async (req, res) => {
+    try {
+        const resources = await prisma.resourceAllocation.findMany()
+        res.status(200).json(resources)
+    } catch (error) {
+        logger.error(`Error fetching resourses: ${error.message}`);
+        res.status(500).json({ error: 'Failed to fetch resourses' });
+
+    }
+}
+/**
  * Retrieves a resource allocation based on the provided ID from the request parameters.
  * @param {Object} req - The request object containing parameters.
  * @param {Object} res - The response object to send back the result.

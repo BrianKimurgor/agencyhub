@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+  }
+
+  .header__logo {
+    font-size: 24px;
+  }
+
+  .header__profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__logout {
+    margin-left: 10px;
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+  }

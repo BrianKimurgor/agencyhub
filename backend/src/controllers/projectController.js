@@ -29,6 +29,13 @@ export const createProject = async (req, res) => {
 };
 
 
+/**
+ * Fetches all projects from the database and sends them in the response.
+ *
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Promise<void>} - A promise that resolves when the response is sent.
+ */
 export const getProjects = async (req, res) => {
     try {
         const projects = await prisma.project.findMany()
@@ -39,6 +46,8 @@ export const getProjects = async (req, res) => {
 
     }
 }
+
+
 /**
  * Retrieves a project based on the provided ID from the request parameters.
  * @param {Object} req - The request object containing parameters.
@@ -83,7 +92,7 @@ export const updateProject = async (req, res) => {
         logger.info(`${project} updated`)
         res.status(200).json(project);
     } catch (error) {
-        logger.error(`failed to update ${project}`)
+        logger.error(`failed to update project`)
         res.status(400).json({ error: error.message });
     }
 };

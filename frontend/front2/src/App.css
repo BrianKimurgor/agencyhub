@@ -1,0 +1,27 @@
+
+.App{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.registerservice{
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    @media (max-width: 600px) {
+        .image1 {
+          display: none; /* Hide image on mobile */
+        }
+      }
+  }
+.image1 {
+    width: 50%;
+    border-radius: 0px 25px 25px 0px  ;
+}

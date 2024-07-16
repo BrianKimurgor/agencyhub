@@ -1,0 +1,60 @@
+.auth-form {
+    background-color: var(--neutral-color);
+    padding: 20px;
+    border-radius: 25px 0px 0px 25px  ;
+    box-shadow: 0 0 10px rgba(21, 21, 21, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    background: linear-gradient(120deg, #003366, #009688);
+
+    @media (max-width: 600px) {
+      border-radius: 20px;
+    }
+  }
+
+  .form-group {
+    margin: 15px;
+
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+
+  .primary-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+
+  }
+
+  .primary-button:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .login{
+    background: linear-gradient(120deg, #003366, #009688);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+  }
