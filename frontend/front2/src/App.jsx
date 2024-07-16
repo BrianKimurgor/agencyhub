@@ -1,110 +1,36 @@
 import './App.css';
-import CompanyForm from './components/companies/companyForm';
-import { companes } from './services/companyService';
-import GetCompanyController from './components/companies/getCompany';
-import BrandingForm from './components/branding/brandingForm';
-import BrandingList from './components/branding/brandingList';
-import ClientForm from './components/client/clientForm';
-import ClientList from './components/client/clientList';
-import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import { useClient } from './hooks/useClient';
-import ProjectGrid from './components/projects/projectGrid';
-import ResourceForm from './components/resourceAllocation/resourceForm';
-import ResourceGrid from './components/resourceAllocation/resourceGrid';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import RegisterGrid from './services/registerService';
-import LoginGrid from './services/loginService';
+import CompaniesPage from './pages/companiesPage';
+import LoginPage from './pages/loginPage';
+import RegisterPage from './pages/registerPage';
+import ProjectsPage from './pages/projectsPage';
+import ResourcePage from './pages/resourcePage';
+import ResourcesPage from './pages/resourcesPage';
+import BrandingListPage from './pages/brandingListPage';
+import BrandingFormPage from './pages/brandingFormPage';
+import ClientsPage from './pages/clientsPage';
+import ClientFormPage from './pages/clientFormPage';
 
 function App() {
-  const [companies, setCompanies] = useState([]);
-  const [editingCompany, setEditingCompany] = useState({
-    id: 0,
-    name: '',
-    address: '',
-    contactEmail: '',
-    contactPhone: '',
-    industry: ''
-  });
-
-  const {
-    clientsList,
-    setClientsList,
-    editingClient,
-    handleCreateClient,
-    handleUpdateClient: updateClient,
-    handleDeleteClient,
-    handleEditClient: editClient
-  } = useClient();
-
-  useEffect(() => {
-    companes.getCompanies().then(data => setCompanies(data));
-  }, []);
-
-  const handleCreateCompany = (formData) => {
-    companes.createCompany(formData).then(newCompany => {
-      setCompanies([...companies, newCompany]);
-    });
-  };
-
-  const handleUpdateCompany = (formData) => {
-    companes.updateCompany({ ...formData, id: editingCompany.id }).then(updatedCompany => {
-      setCompanies(companies.map(company => company.id === updatedCompany.id ? updatedCompany : company));
-    });
-  };
-
-  const handleDeleteCompany = (companyId) => {
-    companes.deleteCompany(companyId).then(() => {
-      setCompanies(companies.filter(company => company.id !== companyId));
-    });
-  };
-
-  const handleEditCompany = (company) => {
-    setEditingCompany(company);
-    console.log(company);
-  };
-
-  const handleEditClient = (client) => {
-    editClient(client);
-  };
-
-  const handleUpdateClient = (formData) => {
-    updateClient(formData).then(updatedClient => {
-      setClientsList(clientsList.map(client => client.id === updatedClient.id ? updatedClient : client));
-    });
-  };
-
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/companies" element={
-            <>
-              <CompanyForm onSubmit={(formData) => handleCreateCompany(formData)} />
-              <GetCompanyController
-                handleEditCompany={(company) => handleEditCompany(company)}
-                handleDeleteCompany={(id) => handleDeleteCompany(id)}
-                handleUpdateCompany={(formData) => handleUpdateCompany(formData)}
-                companies={companies}
-              />
-            </>
-          } />
-          <Route path="/login" element={<LoginGrid />} />
-          <Route path="/register" element={<RegisterGrid />} />
-          <Route path="/" element={<ProjectGrid />} />
-          <Route path="/resource" element={<ResourceForm />} />
-          <Route path="/resources" element={<ResourceGrid />} />
-          <Route path="/branding" element={<BrandingList />} />
-          <Route path="/branding/new" element={<BrandingForm />} />
-          <Route path="/clients" element={<ClientList clients={clientsList} handleEditClient={handleEditClient} handleDeleteClient={handleDeleteClient} />} />
-          <Route path="/clients/new" element={<ClientForm onSubmit={handleCreateClient} />} />
-          <Route path="/clients/edit" element={<ClientForm onSubmit={handleUpdateClient} editingClient={editingClient} />} />
+          <Route path="/companies" element={<CompaniesPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/" element={<ProjectsPage />} />
+          <Route path="/resource" element={<ResourcePage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/branding" element={<BrandingListPage />} />
+          <Route path="/branding/new" element={<BrandingFormPage />} />
+          <Route path="/clients" element={<ClientsPage />} />
+          <Route path="/clients/new" element={<ClientFormPage isEditing={false} />} />
+          <Route path="/clients/edit" element={<ClientFormPage isEditing={true} />} />
         </Routes>
       </div>
-
     </Router>
-
-
   );
 }
 
