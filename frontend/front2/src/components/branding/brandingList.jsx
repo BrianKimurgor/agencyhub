@@ -5,17 +5,17 @@ import useBranding from '../../hooks/useBranding';
 import BrandingForm from './brandingForm';
 
 const BrandingList = () => {
-    const { branding, fetchBranding, deleteExistingBranding } = useBranding();
+    const { brandings, fetchAllBrandings, deleteExistingBranding } = useBranding();
 
     useEffect(() => {
-        fetchBranding();
+        fetchAllBrandings();
     }, []);
 
     return (
         <div>
             <h2>Branding List</h2>
             <ul>
-                {branding && branding.map((brand) => (
+                {brandings && brandings.map((brand) => (
                     <li key={brand.id}>
                         {brand.logoUrl} - {brand.primaryColor} - {brand.secondaryColor}
                         <button onClick={() => deleteExistingBranding(brand.id)}>Delete</button>

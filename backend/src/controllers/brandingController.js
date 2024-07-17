@@ -4,6 +4,17 @@ import logger from '../utils/logger.js';
 
 const prisma = new PrismaClient();
 
+
+export const getBrandings = async (req, res) =>{
+    try {
+        const brands = await prisma.branding.findMany()
+        res.status(200).json(brands)
+    } catch (error) {
+        logger.error(`Error fetching brands: ${error.message}`);
+        res.status(500).json({ error: 'Failed to fetch brands' });
+    }
+}
+
 /**
  * Creates a new branding record based on the provided request body.
  * @param {Object} req - The request object containing branding information in the body.
@@ -11,11 +22,17 @@ const prisma = new PrismaClient();
  * @returns {Promise<void>} - A promise that resolves once the branding record is created.
  */
 export const createBranding = async (req, res) => {
-    const { agencyId, logoUrl, primaryColor, secondaryColor, welcomeText, footerText } = req.body;
+    const { companyId, logoUrl, primaryColor, secondaryColor, welcomeText, footerText } = req.body;
+
+    // Validate the request body
+    if (!companyId || !logoUrl || !primaryColor || !secondaryColor) {
+        return res.status(400).json({ error: 'companyId, logoUrl, primaryColor, and secondaryColor are required' });
+    }
+
     try {
         const branding = await prisma.branding.create({
             data: {
-                agencyId,
+                companyId,
                 logoUrl,
                 primaryColor,
                 secondaryColor,
@@ -23,10 +40,10 @@ export const createBranding = async (req, res) => {
                 footerText
             }
         });
-        logger.info(`${branding.agencyId} created`)
+        logger.info(`${branding.companyId} created`);
         res.status(201).json(branding);
     } catch (error) {
-        logger.error(`failed to create:brand`)
+        logger.error(`Failed to create brand: ${error.message}`);
         res.status(400).json({ error: error.message });
     }
 };
@@ -62,11 +79,11 @@ export const getBranding = async (req, res) => {
  */
 export const updateBranding = async (req, res) => {
     const { id } = req.params;
-    const { agencyId, logoUrl, primaryColor, secondaryColor, welcomeText, footerText } = req.body;
+    const { companyId, logoUrl, primaryColor, secondaryColor, welcomeText, footerText } = req.body;
     try {
         const branding = await prisma.branding.update({
             where: { id: parseInt(id) },
-            data: { agencyId, logoUrl, primaryColor, secondaryColor, welcomeText, footerText }
+            data: { companyId, logoUrl, primaryColor, secondaryColor, welcomeText, footerText }
         });
         logger.info(`${branding.id} updated`)
         res.status(200).json(branding);

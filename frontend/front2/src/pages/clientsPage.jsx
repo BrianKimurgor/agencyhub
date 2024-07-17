@@ -7,13 +7,14 @@ const ClientsPage = () => {
   const {
     clientsList,
     handleEditClient,
+    handleUpdateClient,
     handleDeleteClient
   } = useClient();
 
   return (
     <ClientList
       clients={clientsList}
-      handleEditClient={handleEditClient}
+      handleEditClient={handleUpdateClient}
       handleDeleteClient={handleDeleteClient}
     />
   );

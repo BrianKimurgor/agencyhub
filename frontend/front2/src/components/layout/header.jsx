@@ -5,11 +5,14 @@ import './header.css';
 const Header = () => {
   return (
     <header className="header">
-      <div className="header__logo">AgencyHub</div>
-      <div className="header__profile">
-        <span>User Profile</span>
-        <button className="header__logout">Logout</button>
-      </div>
+      <div className="logo">AgencyHub</div>
+      <nav>
+        <ul>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/notifications">Notifications</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
     </header>
   );
 };

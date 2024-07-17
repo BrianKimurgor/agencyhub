@@ -1,20 +1,23 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './sidebar.css';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
     <aside className="sidebar">
       <nav>
         <ul>
-          <li><Link to="/dashboard">Dashboard</Link></li>
-          <li><Link to="/projects/list">Projects</Link></li>
-          <li><Link to="/clients/list">Clients</Link></li>
-          <li><Link to="/branding/list">Branding</Link></li>
-          <li><Link to="/resources/list">Resource Allocation</Link></li>
-          <li><Link to="/integrations/list">Integrations</Link></li>
-          <li><Link to="/performance/list">Performance</Link></li>
+          <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+          <li><NavLink to="/profile">Profile</NavLink></li>
+          <li><NavLink to="/companies">Companies</NavLink></li>
+          <li><NavLink to="/branding">Branding</NavLink></li>
+          <li><NavLink to="/projects">Projects</NavLink></li>
+          <li><NavLink to="/clients">Clients</NavLink></li>
+          <li><NavLink to="/resource-allocation">Resource Allocation</NavLink></li>
+          <li><NavLink to="/performance">Performance</NavLink></li>
+          <li><NavLink to="/integrations">Integrations</NavLink></li>
+          <li><NavLink to="/sub-agencies">Sub-Agencies</NavLink></li>
         </ul>
       </nav>
     </aside>

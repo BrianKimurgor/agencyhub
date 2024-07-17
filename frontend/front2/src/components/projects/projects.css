@@ -1,0 +1,59 @@
+.project-name {
+    cursor: pointer;
+}
+
+.projects{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.details p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dates{
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-name {
+    cursor: pointer;
+}
+
+.project-details {
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.project-details h3 {
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-buttons {
+    margin-top: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.project-buttons button {
+    margin-right: 10px;
+}

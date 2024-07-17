@@ -1,21 +1,14 @@
-// /* eslint-disable no-unused-vars */
-// import React from 'react';
-// import { Route, Switch } from 'react-router-dom';
-// import ProjectList from '../projects/projectList';
-// import NewProject from '../projects/NewProject';
-// import ProjectDetails from '../projects/ProjectDetails';
+/* eslint-disable react/prop-types */
+ /* eslint-disable no-unused-vars */
+import React from 'react';
+import './maincontent.css';
 
-// const MainContent = () => {
-//   return (
-//     <main className="main-content">
-//       <Switch>
+const MainContent = ({ children }) => {
+  return (
+    <main className="main-content">
+      {children}
+    </main>
+  );
+};
 
-//         <Route exact path="/projects/list" component={ProjectList} />
-//         <Route exact path="/projects/new" component={NewProject} />
-//         <Route exact path="/projects/:id" component={ProjectDetails} />
-//       </Switch>
-//     </main>
-//   );
-// };
-
-// export default MainContent;
+export default MainContent;

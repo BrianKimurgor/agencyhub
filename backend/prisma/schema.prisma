@@ -51,14 +51,14 @@ model CommunicationLog {
 model SubAgency {
   id             Int                   @id @default(autoincrement())
   name           String                @db.VarChar(255)
-  parentAgencyId Int
-  parentAgency   Company               @relation(fields: [parentAgencyId], references: [id], onDelete: Cascade)
+  parentCompanyId Int
+  parentCompany  Company               @relation(fields: [parentCompanyId], references: [id], onDelete: Cascade)
   createdAt      DateTime              @default(now())
   updatedAt      DateTime              @updatedAt
   clients        SubAgencyClient[]
   projects       SubAgencyProject[]
   teamMembers    SubAgencyTeamMember[]
-  Performance    Performance[]
+  performances   Performance[]
 }
 
 model SubAgencyClient {
@@ -140,22 +140,22 @@ model ResourceAllocation {
 
 model Performance {
   id                 Int        @id @default(autoincrement())
-  agencyId           Int
+  companyId          Int
   subAgencyId        Int?
   projectId          Int?
   revenue            Decimal    @default(0)
   clientSatisfaction Decimal    @default(0) @db.Decimal(3, 1)
   profitability      Float      @default(0)
   timestamp          DateTime   @default(now())
-  agency             Company    @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  company            Company    @relation(fields: [companyId], references: [id], onDelete: Cascade)
   subAgency          SubAgency? @relation(fields: [subAgencyId], references: [id], onDelete: SetNull)
   project            Project?   @relation(fields: [projectId], references: [id], onDelete: SetNull)
 }
 
 model Branding {
   id             Int      @id @default(autoincrement())
-  agencyId       Int
-  agency         Company  @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  companyId      Int
+  company        Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
   logoUrl        String?
   primaryColor   String?  @db.VarChar(7)
   secondaryColor String?  @db.VarChar(7)
@@ -167,8 +167,8 @@ model Branding {
 
 model Integration {
   id        Int      @id @default(autoincrement())
-  agencyId  Int
-  agency    Company  @relation(fields: [agencyId], references: [id], onDelete: Cascade)
+  companyId Int
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
   type      String   @db.VarChar(50)
   settings  Json
   createdAt DateTime @default(now())
