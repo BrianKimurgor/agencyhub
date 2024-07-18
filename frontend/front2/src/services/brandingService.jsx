@@ -8,6 +8,11 @@ export const createBranding = async (brandingData) => {
     return response.data;
 };
 
+export const getBrandings = async () => {
+    const response = await axios.get(`${API_URL}`);
+    return response.data;
+};
+
 export const getBranding = async (id) => {
     const response = await axios.get(`${API_URL}/${id}`);
     return response.data;

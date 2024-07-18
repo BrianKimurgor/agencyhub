@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import CompaniesPage from './pages/companiesPage';
 import LoginPage from './pages/loginPage';
 import RegisterPage from './pages/registerPage';
@@ -11,23 +10,28 @@ import BrandingListPage from './pages/brandingListPage';
 import BrandingFormPage from './pages/brandingFormPage';
 import ClientsPage from './pages/clientsPage';
 import ClientFormPage from './pages/clientFormPage';
+import DashboardPage from './pages/dashboardPage';
+import Layout from './components/layout/layout';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/companies" element={<CompaniesPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/" element={<ProjectsPage />} />
-          <Route path="/resource" element={<ResourcePage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
-          <Route path="/branding" element={<BrandingListPage />} />
-          <Route path="/branding/new" element={<BrandingFormPage />} />
-          <Route path="/clients" element={<ClientsPage />} />
-          <Route path="/clients/new" element={<ClientFormPage isEditing={false} />} />
-          <Route path="/clients/edit" element={<ClientFormPage isEditing={true} />} />
+          <Route element={<Layout />}>
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/companies" element={<CompaniesPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/resource" element={<ResourcePage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+            <Route path="/branding" element={<BrandingListPage />} />
+            <Route path="/branding/new" element={<BrandingFormPage />} />
+            <Route path="/clients" element={<ClientsPage />} />
+            <Route path="/clients/new" element={<ClientFormPage isEditing={false} />} />
+            <Route path="/clients/edit" element={<ClientFormPage isEditing={true} />} />
+          </Route>
         </Routes>
       </div>
     </Router>

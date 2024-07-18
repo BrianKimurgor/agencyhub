@@ -399,3 +399,275 @@ Invalid `prisma.user.create()` invocation:
 
 Unique constraint failed on the constraint: `User_email_key`
 2024-07-15T18:38:17.469Z error: Login error: Invalid credentials
+2024-07-17T07:52:29.672Z error: failed to get:undefined
+2024-07-17T07:52:29.705Z error: failed to get:undefined
+2024-07-17T08:44:40.955Z error: failed to update project
+2024-07-17T12:24:55.592Z error: failed to get:undefined
+2024-07-17T12:24:55.673Z error: failed to get:undefined
+2024-07-17T12:25:53.447Z error: failed to create:brand
+2024-07-17T12:25:56.557Z error: failed to create:brand
+2024-07-17T12:31:07.999Z error: failed to get:undefined
+2024-07-17T12:31:08.026Z error: failed to get:undefined
+2024-07-17T13:58:34.056Z error: failed to get:undefined
+2024-07-17T13:58:34.070Z error: failed to get:undefined
+2024-07-17T13:59:35.814Z error: failed to get:undefined
+2024-07-17T13:59:35.835Z error: failed to get:undefined
+2024-07-17T14:10:06.349Z error: failed to get:undefined
+2024-07-17T14:10:06.371Z error: failed to get:undefined
+2024-07-17T15:18:09.024Z error: failed to get:undefined
+2024-07-17T15:18:09.069Z error: failed to get:undefined
+2024-07-17T17:19:08.956Z error: failed to get:undefined
+2024-07-17T17:19:09.037Z error: failed to get:undefined
+2024-07-17T17:35:15.437Z error: failed to get:undefined
+2024-07-17T17:35:15.533Z error: failed to get:undefined
+2024-07-17T17:48:24.894Z error: failed to get:undefined
+2024-07-17T17:48:24.917Z error: failed to get:undefined
+2024-07-17T18:05:32.362Z error: failed to get:undefined
+2024-07-17T18:05:32.390Z error: failed to get:undefined
+2024-07-17T18:07:00.230Z error: failed to get:undefined
+2024-07-17T18:07:09.142Z error: failed to get:undefined
+2024-07-17T18:07:09.261Z error: failed to get:undefined
+2024-07-17T18:09:41.033Z error: failed to get:undefined
+2024-07-17T18:11:48.056Z error: failed to get:undefined
+2024-07-17T18:11:48.298Z error: failed to get:undefined
+2024-07-17T18:11:56.475Z error: failed to get:undefined
+2024-07-17T18:11:56.624Z error: failed to get:undefined
+2024-07-17T18:15:38.324Z error: failed to create:brand
+2024-07-17T18:21:10.656Z error: failed to create:brand: error.message
+2024-07-17T18:21:28.506Z error: failed to create:brand: error.message
+2024-07-17T18:21:30.217Z error: failed to create:brand: error.message
+2024-07-17T18:21:31.074Z error: failed to create:brand: error.message
+2024-07-17T18:21:56.893Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    agencyId: "14",
+              ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `agencyId`: Invalid value provided. Expected Int, provided String.
+2024-07-17T18:21:58.621Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    agencyId: "14",
+              ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `agencyId`: Invalid value provided. Expected Int, provided String.
+2024-07-17T18:28:21.957Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+
+Foreign key constraint failed on the field: `agencyId`
+2024-07-17T18:29:17.053Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    agencyId: "14",
+              ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `agencyId`: Invalid value provided. Expected Int, provided String.
+2024-07-17T18:30:03.717Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    agencyId: "14",
+              ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `agencyId`: Invalid value provided. Expected Int, provided String.
+2024-07-17T18:30:28.445Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    agencyId: "14",
+              ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `agencyId`: Invalid value provided. Expected Int, provided String.
+2024-07-17T18:32:37.248Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+
+Foreign key constraint failed on the field: `agencyId`
+2024-07-17T19:37:07.047Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    agencyId: 0,
+    logoUrl: "",
+    primaryColor: "",
+    secondaryColor: "",
+    welcomeText: "",
+    footerText: "",
++   company: {
++     create: CompanyCreateWithoutBrandingsInput | CompanyUncheckedCreateWithoutBrandingsInput,
++     connectOrCreate: CompanyCreateOrConnectWithoutBrandingsInput,
++     connect: CompanyWhereUniqueInput
++   }
+  }
+}
+
+Argument `company` is missing.
+2024-07-17T19:40:27.178Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    companyId: undefined,
+    logoUrl: "",
+    primaryColor: "",
+    secondaryColor: "",
+    welcomeText: "",
+    footerText: "",
++   company: {
++     create: CompanyCreateWithoutBrandingsInput | CompanyUncheckedCreateWithoutBrandingsInput,
++     connectOrCreate: CompanyCreateOrConnectWithoutBrandingsInput,
++     connect: CompanyWhereUniqueInput
++   }
+  }
+}
+
+Argument `company` is missing.
+2024-07-17T19:40:29.252Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    companyId: undefined,
+    logoUrl: "",
+    primaryColor: "",
+    secondaryColor: "",
+    welcomeText: "",
+    footerText: "",
++   company: {
++     create: CompanyCreateWithoutBrandingsInput | CompanyUncheckedCreateWithoutBrandingsInput,
++     connectOrCreate: CompanyCreateOrConnectWithoutBrandingsInput,
++     connect: CompanyWhereUniqueInput
++   }
+  }
+}
+
+Argument `company` is missing.
+2024-07-17T19:40:33.232Z error: failed to create:brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    companyId: undefined,
+    logoUrl: "",
+    primaryColor: "",
+    secondaryColor: "",
+    welcomeText: "",
+    footerText: "",
++   company: {
++     create: CompanyCreateWithoutBrandingsInput | CompanyUncheckedCreateWithoutBrandingsInput,
++     connectOrCreate: CompanyCreateOrConnectWithoutBrandingsInput,
++     connect: CompanyWhereUniqueInput
++   }
+  }
+}
+
+Argument `company` is missing.
+2024-07-17T19:46:28.217Z error: Failed to create brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    companyId: "15",
+               ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int, provided String.
+2024-07-17T19:47:11.756Z error: Failed to create brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    companyId: "15",
+               ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int, provided String.
+2024-07-17T19:47:13.396Z error: Failed to create brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    companyId: "15",
+               ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int, provided String.
+2024-07-17T19:48:30.012Z error: Failed to create brand: 
+Invalid `prisma.branding.create()` invocation:
+
+{
+  data: {
+    companyId: "15",
+               ~~~~
+    logoUrl: "iiisiiaiia",
+    primaryColor: "blue",
+    secondaryColor: "green",
+    welcomeText: "welcom",
+    footerText: "footer"
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int, provided String.
