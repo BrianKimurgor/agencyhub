@@ -7,7 +7,7 @@ import './projects.css'; // Import CSS file
 const ProjectGrid = () => {
     const [error, setError] = useState('');
     const [projects, setProjects] = useState([]);
-    const [ creating, setIsCreating] = useState()
+    const [isCreating, setIsCreating] = useState(false);
     const [projectData, setProjectData] = useState({
         createdAt: "",
         description: "",
@@ -54,7 +54,7 @@ const ProjectGrid = () => {
         axios.post("http://localhost:5000/api/projects", formData)
             .then(res => {
                 setProjects([...projects, res.data]);
-                setIsCreating(false); // Hide the form after creation
+                setIsCreating(false);
             })
             .catch(error => {
                 setError(error.message);
@@ -101,11 +101,17 @@ const ProjectGrid = () => {
                     </div>
                 )}
             </div>
+            {isCreating && (
+                <div className="mb-3">
+                    <ProjectForm handleSubmit={(formData) => onCreate(formData)} projectData={projectData} />
+                </div>
+            )}
             {isEditing && (
                 <div className="mb-3">
                     <ProjectForm handleSubmit={(formData) => onEdit(formData)} projectData={projectData} />
                 </div>
             )}
+            {error && <p className="text-danger">{error}</p>}
         </>
     );
 };

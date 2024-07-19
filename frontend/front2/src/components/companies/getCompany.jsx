@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, {  } from 'react';
-import CompanyForm from './companyForm';
 import CompanyList from './companyList';
+import './company.css'
 
 const GetCompanyController = ({handleDeleteCompany,
     editingCompany,
@@ -10,12 +10,9 @@ const GetCompanyController = ({handleDeleteCompany,
     companies,
     handleEditCompany}) => {
     return (
-        <div>
+        <div className='companycontroller'>
             <h1>Company Management</h1>
-            <CompanyForm
-                onSubmit={(formData) => handleUpdateCompany(formData) }
-                initialData={editingCompany}
-            />
+
             <CompanyList
                 companies={companies}
                 onEdit={(company) => handleEditCompany(company)}

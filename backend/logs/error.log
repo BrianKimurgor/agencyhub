@@ -671,3 +671,8 @@ Invalid `prisma.branding.create()` invocation:
 }
 
 Argument `companyId`: Invalid value provided. Expected Int, provided String.
+2024-07-18T08:58:58.900Z error: Failed to create brand: 
+Invalid `prisma.branding.create()` invocation:
+
+
+Foreign key constraint failed on the field: `companyId`

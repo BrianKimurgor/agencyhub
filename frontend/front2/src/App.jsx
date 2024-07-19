@@ -12,15 +12,18 @@ import ClientsPage from './pages/clientsPage';
 import ClientFormPage from './pages/clientFormPage';
 import DashboardPage from './pages/dashboardPage';
 import Layout from './components/layout/layout';
+import Profile from './pages/profile/Profile';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
+
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route element={<Layout />}>
+            <Route path="/profile" element={<Profile />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/companies" element={<CompaniesPage />} />
             <Route path="/projects" element={<ProjectsPage />} />

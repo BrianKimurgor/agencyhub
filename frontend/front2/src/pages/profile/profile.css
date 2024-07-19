@@ -1,0 +1,63 @@
+.profile {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.profile-details,
+.profile-form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.profile-details .detail,
+.profile-form .form-group {
+    margin-bottom: 15px;
+}
+
+.profile-details .label,
+.profile-form label {
+    display: block;
+    font-weight: bold;
+}
+
+.profile-details .value,
+.profile-form input {
+    font-size: 16px;
+    color: #212121;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.edit-button,
+.submit-button,
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-button {
+    background-color: #009688;
+    color: #fff;
+}
+
+.submit-button {
+    background-color: #003366;
+    color: #fff;
+}
+
+.cancel-button {
+    background-color: #e0e0e0;
+    color: #212121;
+    margin-left: 10px;
+}

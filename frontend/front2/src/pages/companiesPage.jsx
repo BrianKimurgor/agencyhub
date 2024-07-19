@@ -6,14 +6,9 @@ import { companes } from '../services/companyService';
 
 const CompaniesPage = () => {
   const [companies, setCompanies] = useState([]);
-  const [editingCompany, setEditingCompany] = useState({
-    id: 0,
-    name: '',
-    address: '',
-    contactEmail: '',
-    contactPhone: '',
-    industry: ''
-  });
+  const [editingCompany, setEditingCompany] = useState(null);
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
 
   useEffect(() => {
     companes.getCompanies().then(data => setCompanies(data));
@@ -22,12 +17,15 @@ const CompaniesPage = () => {
   const handleCreateCompany = (formData) => {
     companes.createCompany(formData).then(newCompany => {
       setCompanies([...companies, newCompany]);
+      setShowCreateForm(false); // Hide the form after creating
     });
   };
 
   const handleUpdateCompany = (formData) => {
     companes.updateCompany({ ...formData, id: editingCompany.id }).then(updatedCompany => {
       setCompanies(companies.map(company => company.id === updatedCompany.id ? updatedCompany : company));
+      setShowUpdateForm(false); // Hide the form after updating
+      setEditingCompany(null); // Clear editing state
     });
   };
 
@@ -39,18 +37,31 @@ const CompaniesPage = () => {
 
   const handleEditCompany = (company) => {
     setEditingCompany(company);
-    console.log(company);
+    setShowUpdateForm(true); // Show the update form
   };
 
   return (
     <>
-      <CompanyForm onSubmit={handleCreateCompany} />
+      <button
+        className="btn btn-outline-primary mb-3"
+        onClick={() => setShowCreateForm(!showCreateForm)}
+      >
+        {showCreateForm ? 'Cancel' : 'Create Company'}
+      </button>
+      {showCreateForm && <CompanyForm onSubmit={handleCreateCompany} />}
+
       <GetCompanyController
         handleEditCompany={handleEditCompany}
         handleDeleteCompany={handleDeleteCompany}
-        handleUpdateCompany={handleUpdateCompany}
         companies={companies}
       />
+
+      {showUpdateForm && editingCompany && (
+        <CompanyForm
+          onSubmit={handleUpdateCompany}
+          initialData={editingCompany}
+        />
+      )}
     </>
   );
 };
