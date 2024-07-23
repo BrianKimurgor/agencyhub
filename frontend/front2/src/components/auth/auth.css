@@ -1,7 +1,7 @@
 .auth-form {
     background-color: var(--neutral-color);
     padding: 20px;
-    border-radius: 25px 0px 0px 25px  ;
+    border-radius: 10px  ;
     box-shadow: 0 0 10px rgba(21, 21, 21, 0.1);
     display: flex;
     align-items: center;
@@ -53,7 +53,7 @@
   }
 
   .login{
-    background-color: #015dba;
+    background: linear-gradient(120deg, #003366, #009688);
     border-radius: 15px;
     display: flex;
     align-items: center;

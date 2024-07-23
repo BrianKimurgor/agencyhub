@@ -851,3 +851,8 @@ Invalid `prisma.client.create()` invocation:
 }
 
 Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-23T12:21:32.661Z error: Login error: Invalid credentials
+2024-07-23T12:21:41.567Z error: Login error: Invalid credentials
+2024-07-23T12:21:50.570Z error: Login error: Invalid credentials
+2024-07-23T12:21:53.813Z error: Login error: Invalid credentials
+2024-07-23T12:21:54.624Z error: Login error: Invalid credentials
