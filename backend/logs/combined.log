@@ -836,3 +836,18 @@ Foreign key constraint failed on the field: `companyId`
 2024-07-18T09:11:05.172Z info: 21 created
 2024-07-19T09:57:34.712Z info: Company with ID 21 updated successfully
 2024-07-19T09:57:47.172Z info: 19 deleted
+2024-07-23T06:23:32.679Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "1100",
+    companyId: "22"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.

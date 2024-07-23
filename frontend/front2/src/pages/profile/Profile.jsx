@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import ProfileDetails from './profileDetails';
 
-import ProfileForm from './profileFForm';
+import ProfileForm from './profileForm';
 import './profile.css';
 
 const Profile = () => {
