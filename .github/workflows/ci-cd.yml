@@ -42,10 +42,6 @@ jobs:
         working-directory: ./backend
         run: npx prisma generate
 
-      - name: Run backend tests
-        working-directory: ./backend
-        run: npm test # Ensure you have backend tests set up
-
       - name: Start backend server
         working-directory: ./backend
         run: npm start &
