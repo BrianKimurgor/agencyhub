@@ -12,8 +12,8 @@ const GetCompanyController = ({handleDeleteCompany,
     return (
         <div className='companycontroller'>
             <h1>Company Management</h1>
-
             <CompanyList
+                className='lists'
                 companies={companies}
                 onEdit={(company) => handleEditCompany(company)}
                 onDelete={handleDeleteCompany}

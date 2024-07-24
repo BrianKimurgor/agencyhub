@@ -6,9 +6,10 @@
 
 .profile-details,
 .profile-form {
-    background-color: #fff;
+    background-color: #003366;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(0, 0, 0, 0.1);;
     padding: 20px;
 }
 
@@ -21,12 +22,13 @@
 .profile-form label {
     display: block;
     font-weight: bold;
+    color: #ffffff;
 }
 
 .profile-details .value,
 .profile-form input {
     font-size: 16px;
-    color: #212121;
+    color: #ffffff;
 }
 
 .profile-form input {
@@ -34,6 +36,8 @@
     padding: 8px;
     border: 1px solid #e0e0e0;
     border-radius: 4px;
+
+
 }
 
 .edit-button,
@@ -60,4 +64,8 @@
     background-color: #e0e0e0;
     color: #212121;
     margin-left: 10px;
+}
+
+.detail{
+    border-bottom: 1px solid black;
 }

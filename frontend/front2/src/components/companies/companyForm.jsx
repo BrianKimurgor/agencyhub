@@ -26,54 +26,49 @@ const CompanyForm = ({ onSubmit, initialData }) => {
         e.preventDefault();
         onSubmit(formData);
     };
-
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="name">Company Name:</label>
+        <form onSubmit={handleSubmit} className='forms'>
             <input
                 type="text"
                 id="name"
                 name="name"
+                placeholder='company name'
                 value={formData.name}
                 onChange={handleChange}
                 required
             />
-
-            <label htmlFor="address">Company Address:</label>
             <input
                 type="text"
                 id="address"
                 name="address"
+                placeholder='address'
                 value={formData.address}
                 onChange={handleChange}
                 required
             />
-
-            <label htmlFor="contactEmail">Contact Email:</label>
             <input
                 type="email"
                 id="contactEmail"
                 name="contactEmail"
+                placeholder='contact emai'
                 value={formData.contactEmail}
                 onChange={handleChange}
                 required
             />
-
-            <label htmlFor="contactPhone">Contact Phone:</label>
             <input
                 type="tel"
                 id="contactPhone"
                 name="contactPhone"
+                placeholder='contact phone'
                 value={formData.contactPhone}
                 onChange={handleChange}
                 required
             />
-
-            <label htmlFor="industry">Industry:</label>
             <input
                 type="text"
                 id="industry"
                 name="industry"
+                placeholder='industry'
                 value={formData.industry}
                 onChange={handleChange}
             />

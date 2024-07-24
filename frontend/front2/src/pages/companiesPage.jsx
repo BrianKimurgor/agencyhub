@@ -42,26 +42,28 @@ const CompaniesPage = () => {
 
   return (
     <>
-      <button
-        className="btn btn-outline-primary mb-3"
-        onClick={() => setShowCreateForm(!showCreateForm)}
-      >
-        {showCreateForm ? 'Cancel' : 'Create Company'}
-      </button>
-      {showCreateForm && <CompanyForm onSubmit={handleCreateCompany} />}
-
-      <GetCompanyController
-        handleEditCompany={handleEditCompany}
-        handleDeleteCompany={handleDeleteCompany}
-        companies={companies}
-      />
-
-      {showUpdateForm && editingCompany && (
-        <CompanyForm
-          onSubmit={handleUpdateCompany}
-          initialData={editingCompany}
-        />
-      )}
+      <div className='companys'>
+        <button
+          className="btn btn-outline-primary mb-3"
+          onClick={() => setShowCreateForm(!showCreateForm)}
+        >
+          {showCreateForm ? 'Cancel' : 'Create Company'}
+        </button>
+        {showCreateForm && <CompanyForm onSubmit={handleCreateCompany} />}
+        <div className='detaills'>
+          <GetCompanyController
+            handleEditCompany={handleEditCompany}
+            handleDeleteCompany={handleDeleteCompany}
+            companies={companies}
+          />
+          {showUpdateForm && editingCompany && (
+            <CompanyForm
+              onSubmit={handleUpdateCompany}
+              initialData={editingCompany}
+            />
+          )}
+        </div>
+      </div>
     </>
   );
 };

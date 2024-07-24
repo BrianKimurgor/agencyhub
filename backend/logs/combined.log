@@ -856,3 +856,8 @@ Argument `companyId`: Invalid value provided. Expected Int or Null, provided Str
 2024-07-23T12:21:50.570Z error: Login error: Invalid credentials
 2024-07-23T12:21:53.813Z error: Login error: Invalid credentials
 2024-07-23T12:21:54.624Z error: Login error: Invalid credentials
+2024-07-23T19:04:09.394Z info: Company created: agency
+2024-07-23T19:38:57.491Z info: 18 deleted
+2024-07-23T19:38:58.983Z error: the 18 is unavailable
+2024-07-23T19:38:59.382Z error: the 18 is unavailable
+2024-07-23T19:41:18.975Z info: [object Object] updated

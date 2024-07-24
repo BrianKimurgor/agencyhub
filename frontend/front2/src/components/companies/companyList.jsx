@@ -19,7 +19,7 @@ const CompanyList = ({ companies, onEdit, onDelete }) => {
         <ul className='management'>
             {companies.map((company) => (
                 <li key={company.id}>
-                    <span onClick={() => handleCompanyClick(company)} style={{ cursor: 'pointer', color: 'blue' }}>
+                    <span onClick={() => handleCompanyClick(company)} style={{ cursor: 'pointer', color: 'white', size: 'larger' }}>
                         {company.name}
                     </span>
                     {selectedCompany && selectedCompany.id === company.id && (
