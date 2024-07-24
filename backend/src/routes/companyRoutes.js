@@ -1,7 +1,6 @@
 // backend/src/routes/companyRoutes.js
 
 import express from 'express'
-// import { authorize } from '../middlewares/roleMiddleware.js';
 import {
     createCompany,
     getCompanies,
@@ -12,7 +11,7 @@ import {
 
 const router = express.Router();
 
-// router.post('/companies', createCompany);
+
 router.post('/companies',  createCompany);
 router.get('/companies',  getCompanies);
 router.get('/companies/:id',  getCompanyById);

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=mysql://root:6979samZ.@@localhost:3306/agencyhub
+
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend/front2
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./frontend/front2:/src/app
+
+  db:
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 6979samZ.@
+      MYSQL_DATABASE: agencyhub
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 6979samZ.@
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
