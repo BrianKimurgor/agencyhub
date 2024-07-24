@@ -1,0 +1,75 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_ROOT_PASSWORD: 6979samZ.@
+          MYSQL_DATABASE: agencyhub
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Backend setup and testing
+      - name: Install backend dependencies
+        working-directory: ./backend
+        run: npm install
+
+      - name: Set up Prisma
+        working-directory: ./backend
+        run: npx prisma generate
+
+      - name: Run backend tests
+        working-directory: ./backend
+        run: npm test # Ensure you have backend tests set up
+
+      - name: Start backend server
+        working-directory: ./backend
+        run: npm start &
+
+      # Frontend setup, linting, and building
+      - name: Install frontend dependencies
+        working-directory: ./frontend/front2
+        run: npm install
+
+      - name: Lint frontend code
+        working-directory: ./frontend/front2
+        run: npm run lint
+
+      - name: Build frontend
+        working-directory: ./frontend/front2
+        run: npm run build
+
+      - name: Build Storybook
+        working-directory: ./frontend/front2
+        run: npm run build-storybook
+
+      # Deployment step
+      - name: Deploy to Production
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          echo "Deploying to production server..."
+          # Add your deployment script here

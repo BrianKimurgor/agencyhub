@@ -1,7 +1,7 @@
 .auth-form {
     background-color: var(--neutral-color);
     padding: 20px;
-    border-radius: 25px 0px 0px 25px  ;
+    border-radius: 10px  ;
     box-shadow: 0 0 10px rgba(21, 21, 21, 0.1);
     display: flex;
     align-items: center;
@@ -19,6 +19,9 @@
     margin: 15px;
 
   }
+  .input{
+    background-color: #003366;
+  }
 
   label {
     display: block;
@@ -30,7 +33,7 @@
     width: 100%;
     padding: 10px;
     border: 1px solid var(--secondary-text-color);
-    border-radius: 25px;
+    border-radius: 10px;
     box-sizing: border-box;
   }
 
@@ -40,7 +43,7 @@
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    border-radius: 25px;
+    border-radius: 10px;
     transition: background-color 0.3s;
 
   }
@@ -57,4 +60,6 @@
     justify-content: center;
     flex-direction: column;
     width: 300px;
+
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
   }

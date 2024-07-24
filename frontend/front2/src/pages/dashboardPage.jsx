@@ -1,16 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Overview from './overview';
+import PerformanceMetrics from './perfomanceMetrics';
+import RecentActivities from './recentActivities';
+import Notifications from './notifications';
+import './dashboard.css';
 
-const DashboardPage = () => {
-  return (
-    <div>
-      <h1>Welcome to your Dashboard</h1>
-      <div>
-        <p>Summary of user activity</p>
-        <p>Quick links to various sections of the application</p>
-      </div>
-    </div>
-  );
+const Dashboard = () => {
+    return (
+        <div className="dashboard">
+            <Overview />
+            <div className="widgets">
+                <PerformanceMetrics />
+                <RecentActivities />
+                <Notifications />
+            </div>
+        </div>
+    );
 };
 
-export default DashboardPage;
+export default Dashboard;

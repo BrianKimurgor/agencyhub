@@ -1,0 +1,15 @@
+.loginservice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003366;
+    height: 100vh;
+}
+
+.registerservice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003366;
+    height: 100vh;
+}

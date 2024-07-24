@@ -3,6 +3,7 @@ import axios from 'axios';
 import RegisterForm from '../login/RegistrationForm';
 import { useState } from 'react';
 import mobile from '../../public/mobile.avif'
+import './loginservice.css'
 
 const API_URL = 'http://localhost:5000/api/auth/register';
 
@@ -32,7 +33,6 @@ const RegisterGrid = () => {
     <div className='registerservice'>
       {error && <p className="error-message">{error}</p>}
       <RegisterForm onRegister={(data) => onRegister(data)} />
-      <img src={mobile} className='image1'/>
     </div>
   );
 };

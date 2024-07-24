@@ -671,3 +671,30 @@ Invalid `prisma.branding.create()` invocation:
 }
 
 Argument `companyId`: Invalid value provided. Expected Int, provided String.
+2024-07-18T08:58:58.900Z error: Failed to create brand: 
+Invalid `prisma.branding.create()` invocation:
+
+
+Foreign key constraint failed on the field: `companyId`
+2024-07-23T06:23:32.679Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "1100",
+    companyId: "22"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-23T12:21:32.661Z error: Login error: Invalid credentials
+2024-07-23T12:21:41.567Z error: Login error: Invalid credentials
+2024-07-23T12:21:50.570Z error: Login error: Invalid credentials
+2024-07-23T12:21:53.813Z error: Login error: Invalid credentials
+2024-07-23T12:21:54.624Z error: Login error: Invalid credentials
+2024-07-23T19:38:58.983Z error: the 18 is unavailable
+2024-07-23T19:38:59.382Z error: the 18 is unavailable

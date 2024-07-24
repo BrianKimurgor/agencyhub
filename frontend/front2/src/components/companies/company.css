@@ -1,0 +1,35 @@
+
+.companycontroller{
+    border: 1px solid black;
+}
+
+.management{
+    list-style: none;
+}
+
+.management li{
+    color: aliceblue;
+    border-bottom: 1px solid black;
+}
+
+.links {
+    display: block;
+}
+
+.forms{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.forms input {
+    width: 300px;
+    margin: 5px;
+}
+
+.lists{
+    color: white;
+    font-size: larger;
+}

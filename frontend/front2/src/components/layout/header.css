@@ -1,13 +1,25 @@
+/* header.css */
+
+/* General Styles */
+body.dark .dark\:bg-black {
+  background-color: black;
+}
+
+/* Header Styles */
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  align-items: center;
+  padding: 1rem 2rem;
   background-color: #003366;
-  color: white;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  color: #E0E0E0;
 }
 
 .header .logo {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .header nav ul {
@@ -16,25 +28,17 @@
 }
 
 .header nav ul li {
-  margin-left: 1rem;
-  border: 1px solid black;
-  border-radius: 15px;
-  padding: 5px;
-  padding-left: 9px;
-  background-color: aqua;
-}
-
-.header nav ul li:hover{
-  margin-left: 1rem;
-  border-radius: 15px;
-  padding: 5px;
-  padding-left: 9px;
-  background-color: rgb(29, 43, 43);
+  margin-left: 1.5rem;
 }
 
 .header nav ul li a {
-  color: white;
+  color: #E0E0E0;
   text-decoration: none;
-  padding: 5px;
-
+  transition: color 0.3s;
 }
+
+.header nav ul li a:hover {
+  color: #FF5722;
+}
+
+/* Responsive Styles */

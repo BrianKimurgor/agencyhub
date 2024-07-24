@@ -810,3 +810,54 @@ Argument `companyId`: Invalid value provided. Expected Int, provided String.
 2024-07-17T20:05:59.943Z info: 15 created
 2024-07-17T20:06:04.301Z info: 15 created
 2024-07-17T20:06:19.357Z info: 15 created
+2024-07-18T08:00:30.599Z info: [object Object] created
+2024-07-18T08:01:05.203Z info: [object Object] created
+2024-07-18T08:06:43.899Z info: Company created: Gibbross
+2024-07-18T08:07:36.133Z info: Company with ID 15 updated successfully
+2024-07-18T08:11:21.006Z info: Company created: Laikipia University
+2024-07-18T08:11:52.325Z info: Company with ID 28 deleted successfully
+2024-07-18T08:11:58.005Z info: Company with ID 15 updated successfully
+2024-07-18T08:12:41.641Z info: Company with ID 27 deleted successfully
+2024-07-18T08:12:46.273Z info: Company with ID 15 deleted successfully
+2024-07-18T08:22:40.529Z info: Company with ID 21 updated successfully
+2024-07-18T08:34:48.935Z info: Company with ID 26 deleted successfully
+2024-07-18T08:35:19.869Z info: Company with ID 21 updated successfully
+2024-07-18T08:36:12.869Z info: [object Object] created
+2024-07-18T08:53:06.242Z info: Company with ID 21 updated successfully
+2024-07-18T08:58:58.900Z error: Failed to create brand: 
+Invalid `prisma.branding.create()` invocation:
+
+
+Foreign key constraint failed on the field: `companyId`
+2024-07-18T09:00:22.839Z info: 21 created
+2024-07-18T09:00:26.627Z info: 21 created
+2024-07-18T09:00:27.194Z info: 21 created
+2024-07-18T09:00:27.719Z info: 21 created
+2024-07-18T09:11:05.172Z info: 21 created
+2024-07-19T09:57:34.712Z info: Company with ID 21 updated successfully
+2024-07-19T09:57:47.172Z info: 19 deleted
+2024-07-23T06:23:32.679Z error: failed to create: PrismaClientValidationError: 
+Invalid `prisma.client.create()` invocation:
+
+{
+  data: {
+    name: "Brian Kimurgor",
+    email: "kimurgorbrian20@gmail.com",
+    phone: "0748983103",
+    address: "1100",
+    companyId: "22"
+               ~~~~
+  }
+}
+
+Argument `companyId`: Invalid value provided. Expected Int or Null, provided String.
+2024-07-23T12:21:32.661Z error: Login error: Invalid credentials
+2024-07-23T12:21:41.567Z error: Login error: Invalid credentials
+2024-07-23T12:21:50.570Z error: Login error: Invalid credentials
+2024-07-23T12:21:53.813Z error: Login error: Invalid credentials
+2024-07-23T12:21:54.624Z error: Login error: Invalid credentials
+2024-07-23T19:04:09.394Z info: Company created: agency
+2024-07-23T19:38:57.491Z info: 18 deleted
+2024-07-23T19:38:58.983Z error: the 18 is unavailable
+2024-07-23T19:38:59.382Z error: the 18 is unavailable
+2024-07-23T19:41:18.975Z info: [object Object] updated

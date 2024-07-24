@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './header.css';
+import LogoutButton from '../../services/LogoutButton';
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         <ul>
           <li><a href="/profile">Profile</a></li>
           <li><a href="/notifications">Notifications</a></li>
-          <li><a href="/logout">Logout</a></li>
+          <li><LogoutButton /></li>
         </ul>
       </nav>
     </header>
