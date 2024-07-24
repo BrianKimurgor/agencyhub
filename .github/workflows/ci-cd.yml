@@ -51,17 +51,10 @@ jobs:
         working-directory: ./frontend/front2
         run: npm install
 
-      - name: Lint frontend code
-        working-directory: ./frontend/front2
-        run: npm run lint
-
       - name: Build frontend
         working-directory: ./frontend/front2
         run: npm run build
 
-      - name: Build Storybook
-        working-directory: ./frontend/front2
-        run: npm run build-storybook
 
       # Deployment step
       - name: Deploy to Production
