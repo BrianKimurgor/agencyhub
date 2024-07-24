@@ -50,15 +50,3 @@ jobs:
       - name: Install frontend dependencies
         working-directory: ./frontend/front2
         run: npm install
-
-      - name: Build frontend
-        working-directory: ./frontend/front2
-        run: npm run build
-
-
-      # Deployment step
-      - name: Deploy to Production
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          echo "Deploying to production server..."
-          # Add your deployment script here
