@@ -52,7 +52,7 @@ AgencyHub is a centralized agency management platform designed to streamline and
 
 3. **Frontend Setup**:
     ```sh
-    cd ../frontend
+    cd ../frontend/front2
     npm install
     ```
 
@@ -73,12 +73,12 @@ AgencyHub is a centralized agency management platform designed to streamline and
 
 2. **Start the Frontend Development Server**:
     ```sh
-    cd frontend
+    cd frontend/front2
     npm run dev
     ```
 
 3. **Access the Application**:
-    Open your browser and navigate to `http://localhost:3000`
+    Open your browser and navigate to `http://localhost:5173/`
 
 ## API Endpoints
 
